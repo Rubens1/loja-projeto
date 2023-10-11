@@ -1,0 +1,21 @@
+.banners{
+    display: flex;
+    width: 100%;
+    margin: 2rem 0;
+    justify-content: center; 
+}
+.banners-three{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.info-banner{
+    margin: 3px;
+}
+.info-banner img{
+    border-radius: 10px;
+    width: 350px;
+    height: 150px;
+}

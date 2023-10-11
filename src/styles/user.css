@@ -1,0 +1,154 @@
+.usere{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.user-profile-container-site {
+    padding: 20px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.user-addr-container-site,
+.user-personal-data-container-site {
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 10px;
+    border-radius: 0.25rem;
+    /* text-align: center; */
+    margin: 12px;
+}
+.user-addr-container-site form,
+.user-personal-data-container-site form {
+    display: flex;
+    flex-direction: column;
+}
+.user-addr-container-site input,
+.user-personal-data-container-site input {
+    border: none;
+    width: 100%;
+    padding: 5px;
+}
+.user-addr-container-site input:focus,
+.user-personal-data-container-site input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.address-card-box {
+    overflow-Y: scroll;
+    display: flex;
+    flex-direction: column;
+    border: 2px lightgray;
+    height: 350px;
+}
+.address-card {
+    width: 400px;
+    text-align: left;
+    border: 1px solid var(--color-grey);
+    border-radius: 0.25rem;
+    margin:  10px 0;
+    padding: 20px;
+    
+}
+.addr-title{
+    font-weight: 700;
+}
+.actions-btn{
+    margin-top: 1rem;
+}
+.actions-btn button{
+    padding: 10px;
+    border-radius: 5px;
+}
+.actions-btn {
+    position: relative;
+    text-align: right;
+}
+.addr-delete {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+.user-addr-form-title,
+.user-data-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight:  800;
+}
+.button-users{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.button-users .edit-perfil{
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+    border-radius: 0.30rem;
+    transition: var(--tran-07);
+}
+.button-users .edit-perfil:hover{
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+.modal {
+    top: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.modal-container-site {
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.modal-info{
+    height: 500px;
+    width: 500px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    padding: 10px;
+}
+.active {
+    transition: var(--tran-04);
+    display: block;
+}
+.close {
+    display: none;
+}
+.close-modal{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    border-bottom: 1px solid var(--color-grey);
+}
+.close-btn {
+    cursor: pointer;
+    font-size: 1.7rem;
+    color: var(--color-red);
+}
+@media (max-width: 850px) {
+    .user-profile-container-site{
+        flex-wrap: wrap;
+    }
+    .address-card{
+        width: 100%;
+    }
+}
