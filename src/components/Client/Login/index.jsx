@@ -4,15 +4,6 @@ import { AiOutlineGooglePlus } from 'react-icons/ai';
 import axios from "axios";
 import { toast } from "react-toastify";
 export default function LoginClient() {
-
-    const [formData, setFormData] = useState({
-        email: '',
-        senha: '',
-        nome_cadastro: '',
-        email_cadastro: '',
-        senha_cadastro: ''
-    });      
-
       
   useEffect(() => {
     const containersite = document.getElementById('container-siteLogin');
@@ -31,9 +22,8 @@ export default function LoginClient() {
   // Handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const email = formData.email;
-    const senha = formData.senha;
-
+    const email = e.target.email.value;
+    const senha = e.target.senha.value;
     axios.post(`${process.env.NEXT_PUBLIC_API_URL}pessoa-entrar`, {
       email: email,
       senha: senha
@@ -64,16 +54,16 @@ export default function LoginClient() {
 
   const handleCreate = async (e) => {
     e.preventDefault()
-    let nome_cadastro = formData.nome_cadastro
-    let email_cadastro = formData.email_cadastro
-    let senha_cadastro = formData.senha_cadastro
+    let nome_cadastro = e.target.nome_cadastro.value
+    let email_cadastro = e.target.email_cadastro.value
+    let senha_cadastro = e.target.senha_cadastro.value
 
     axios.post(`${process.env.NEXT_PUBLIC_API_URL}pessoa-cadastro`, {
         'nome': nome_cadastro,
         'email': email_cadastro,
         'senha': senha_cadastro
      }).then((response) => {
-        toast.success(response, {
+        toast.success('Cadastro realizado com sucesso', {
            theme: "light",
             position: "top-right"
         });
@@ -90,42 +80,34 @@ export default function LoginClient() {
     });  
   }
 
-  const handleFieldChange = async (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-
-  };
-
     return (
       <>
         <section className="login-section">
           <div className="container-siteLogin" id="container-siteLogin">
               <div className="form-container-site sign-up">
-                  <form onSubmit={handleCreate}>
+                  <form onSubmit={e => handleCreate(e)}>
                       <h1>Criar uma conta</h1>
                       <div className="social-icons">
                           <a href="#" className="icon"><AiOutlineGooglePlus /></a>
                           <a href="#" className="icon"><BiLogoFacebook /></a>
                       </div>
                       <span>ou use seu e-mail para cadastro</span>
-                      <input type="text" placeholder="Nome" name="nome_cadastro" onChange={handleFieldChange}/>
-                      <input type="email" placeholder="Email" name="email_cadastro" onChange={handleFieldChange}/>
-                      <input type="password" placeholder="Senha" name="senha_cadastro" onChange={handleFieldChange}/>
+                      <input type="text" placeholder="Nome" name="nome_cadastro"/>
+                      <input type="email" placeholder="Email" name="email_cadastro"/>
+                      <input type="password" placeholder="Senha" name="senha_cadastro"/>
                       <button type="submit">Inscrever-se</button>
                   </form>
               </div>
               <div className="form-container-site sign-in">
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={e => handleSubmit(e)}>
                       <h1>Entrar</h1>
                       <div className="social-icons">
                           <a href="#" className="icon"><AiOutlineGooglePlus /></a>
                           <a href="#" className="icon"><BiLogoFacebook /></a>
                       </div>
                       <span>ou use sua senha de e-mail</span>
-                      <input type="email" placeholder="Email"  name="email" onChange={handleFieldChange}/>
-                      <input type="password" placeholder="Senha"  name="senha" onChange={handleFieldChange}/>
+                      <input type="email" placeholder="Email"  name="email"/>
+                      <input type="password" placeholder="Senha"  name="senha"/>
                       <a href="#">Esqueceu sua senha?</a>
                       <button type="submit">Entrar</button>
                   </form>

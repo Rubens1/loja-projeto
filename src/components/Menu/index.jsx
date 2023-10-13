@@ -57,7 +57,7 @@ export default function Menu() {
                                     <Image src={logo} alt="Cardpress" />
                                 </Link>
                             </div>
-                            <div className="form-search" onClick={e => loadLink('')}>
+                            <div className="form-search">
                                 <form action="" method="post">
                                     <div className="search">
                                         <input placeholder="O que você procura?" type="search" name="" id="" className="search-input" />
