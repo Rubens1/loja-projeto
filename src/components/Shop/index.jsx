@@ -108,6 +108,8 @@ export default function Shop() {
                             <div className="products">
                                 <div className="my-product">
                                     {carrinho.map((produtoCarrinho, key) => {
+                                        const inputQuantidade = produtoCarrinho.quantidade;
+                                        
                                         return (
 
                                             <div className="card-shop" key={`carrinho-${produtoCarrinho.id}`}>

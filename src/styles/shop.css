@@ -341,7 +341,8 @@
     .input-qtd button{
         display: none;
     }
-    .cupom-form{
+    .cupom-form,
+    .cep-form{
         display: block;
     }
 }
