@@ -21,21 +21,21 @@ export default function Contact() {
     
                     <div className="input-group">
                         <div className="input-box">
-                            <label htmlFor="firstname">Primeiro Nome</label>
+                            <label>Primeiro Nome</label>
                             <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required />
                         </div>
     
                         <div className="input-box">
-                            <label htmlFor="lastname">Sobrenome</label>
+                            <label>Sobrenome</label>
                             <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required />
                         </div>
                         <div className="input-box">
-                            <label htmlFor="email">E-mail</label>
+                            <label>E-mail</label>
                             <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required />
                         </div>
     
                         <div className="input-box">
-                            <label htmlFor="number">Celular</label>
+                            <label>Celular</label>
                             <IMaskInput
                                 type="tel"
                                 name="number"
@@ -45,7 +45,7 @@ export default function Contact() {
                             />
                         </div>
                         <div className="input-box">
-                            <label htmlFor="descricao">Descrição</label>
+                            <label>Descrição</label>
                             <textarea id="descricao" name="descricao" rows="10" placeholder="Digita a sua mensagem" required></textarea>
                         </div>
     

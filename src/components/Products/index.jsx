@@ -26,7 +26,7 @@ export default function Products() {
             <div className="product-container-site">
                 {produtos.map((produto, key) => {
 
-                   return( <Link className="product-info" key={produto.id} href={produto.slug}>
+                   return( <Link className="product-info" key={`produto-${produto.id}`} href={produto.slug}>
                         <div className="img-product">
                             <Image src={produto.imagem} alt="Cardpress" />
                         </div>

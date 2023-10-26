@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function Menu() {
+    const [urlLink, setUrlLink] = useState();
+    const [load, setLoad] = useState(false);
 
     useEffect(() => {
 
@@ -30,9 +32,7 @@ export default function Menu() {
         const url = window.location.href
         setUrlLink(url);
     }, [])
-    const [urlLink, setUrlLink] = useState();
-    const [load, setLoad] = useState(false);
-
+    
     const loadLink = (e) => {
         if (urlLink.split('/')[3] != e) {
             setTimeout(() => setLoad(true), 1000);

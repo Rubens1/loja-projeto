@@ -8,6 +8,15 @@ import Link from 'next/link';
 export default function Shop() {
 
     const [validarCupom, setValidarCupom] = useState(false)
+    const [carrinho, setCarrinho] = useState([
+        {id: 1,imagem: image, nome: "Produto 1", quantidade: 1, valor: "23.00"},
+        {id: 2,imagem: image, nome: "Produto 2", quantidade: 1, valor: "20.00"},
+        {id: 3,imagem: image, nome: "Produto 3", quantidade: 1, valor: "18.00"},
+        {id: 4,imagem: image, nome: "Produto 4", quantidade: 1, valor: "33.00"},
+        {id: 5,imagem: image, nome: "Produto 5", quantidade: 1, valor: "16.00"}
+
+    ]);
+    
     const cupons = [
         { value: '1', label: 'Todos' },
         { value: '2', label: 'Cliente' },
@@ -36,15 +45,6 @@ export default function Shop() {
         }
     }    
 
-    const [carrinho, setCarrinho] = useState([
-        {id: 1,imagem: image, nome: "Produto 1", quantidade: 1, valor: "R$ 23,00"},
-        {id: 2,imagem: image, nome: "Produto 2", quantidade: 1, valor: "R$ 20,00"},
-        {id: 3,imagem: image, nome: "Produto 3", quantidade: 1, valor: "R$ 18,00"},
-        {id: 4,imagem: image, nome: "Produto 4", quantidade: 1, valor: "R$ 33,00"},
-        {id: 5,imagem: image, nome: "Produto 5", quantidade: 1, valor: "R$ 16,00"}
-
-    ]);
-  
     const agregarProduto = (produto) => {
         const index = carrinho.findIndex(item => item.id === produto.id);
         
@@ -70,26 +70,26 @@ export default function Shop() {
       
         if (index !== -1) {
           const novoCarrinho = [...carrinho];
-          novoCarrinho.splice(index, 1); // Remove o produto da lista
+          novoCarrinho.splice(index, 1); 
           setCarrinho(novoCarrinho);
         }
       };
     
       const atualizarQuantidade = (produto, novaQuantidade) => {
-
-        if (isNaN(novaQuantidade) || novaQuantidade < 1) {
-          return;
-        }
+        // Verifique se a novaQuantidade é um número válido.
+        const novaQuantidadeNum = parseInt(novaQuantidade, 10);
+        if (!isNaN(novaQuantidadeNum) && novaQuantidadeNum >= 1) {
+          const index = carrinho.findIndex((item) => item.id === produto.id);
       
-        const index = carrinho.findIndex(item => item.id === produto.id);
-      
-        if (index !== -1) {
-          const novoCarrinho = [...carrinho];
-          novoCarrinho[index].quantidade = parseInt(novaQuantidade, 10); 
-          setCarrinho(novoCarrinho);
+          if (index !== -1) {
+            const novoCarrinho = [...carrinho];
+            novoCarrinho[index].quantidade = novaQuantidadeNum;
+            setCarrinho(novoCarrinho);
+          }
         }
       };
-
+      const total = carrinho.quantidade * carrinho.valor
+      console.log(total)
     return (
       <>
         <section className="cart">
@@ -99,22 +99,22 @@ export default function Shop() {
                     <div className="info-card">
                         <div className="products">
                             <div className="my-product">
-                            {carrinho.map(produto => (
+                            {carrinho.map((produtoCarrinho, key) => (
 
-                                <div className="card-shop" key={produto.id}>
+                                <div className="card-shop" key={`carrinho-${produtoCarrinho.id}`}>
                                     <div className="image-shop">
-                                        <Image src={produto.imagem} alt="produto" />
-                                        <div className="delete" onClick={() => removerProduto(produto)}><AiOutlineDelete /></div>
+                                        <Image src={produtoCarrinho.imagem} alt="produto" />
+                                        <div className="delete" onClick={() => removerProduto(produtoCarrinho)}><AiOutlineDelete /></div>
                                     </div>
-                                    <div className="name-product-shop">{produto.nome}</div>
+                                    <div className="name-product-shop">{produtoCarrinho.nome}</div>
                                     <div className="quanty-shop"><p>Quantidade</p>
                                         <div className="input-qtd">
-                                            <button onClick={() => eliminarProduto(produto)}>-</button>
-                                            <input type="tel" onChange={(e) => atualizarQuantidade(produto, e.target.value)} defaultValue={produto.quantidade} />
-                                            <button onClick={() => agregarProduto(produto)}>+</button>
+                                            <button onClick={() => eliminarProduto(produtoCarrinho)}>-</button>
+                                            <input type="tel" onChange={(e) => atualizarQuantidade(produtoCarrinho, e.target.value)} value={produtoCarrinho.quantidade} readOnly />
+                                            <button onClick={() => agregarProduto(produtoCarrinho)}>+</button>
                                         </div>
                                     </div>
-                                    <div className="price-shop">Valor<p></p><b>{produto.valor}</b></div>
+                                    <div className="price-shop">Valor<p></p><b>R$ {produtoCarrinho.valor}</b></div>
                                 </div>
                             ))}
                             </div>

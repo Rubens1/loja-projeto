@@ -59,6 +59,12 @@ export default function Footer() {
                 <li>
                     <Link href="politica-de-privacidade" className="footer-link" alt="Política de Privacidade" onClick={e => loadLink('politica-de-privacidade')}>Política de Privacidade</Link>
                 </li>
+                <li>
+                    <Link href="revenda" className="footer-link" alt="Seja um revendedor" onClick={e => loadLink('revenda')}>Seja um revendedor</Link>
+                </li>
+                <li>
+                    <Link href="afiliado" className="footer-link" alt="Seja um afiliado" onClick={e => loadLink('afiliado')}>Seja um afiliado</Link>
+                </li>
             </ul>
 
             <ul className="footer-list">
@@ -70,6 +76,18 @@ export default function Footer() {
                 </li>
                 <li>
                     <Link href="contato" className="footer-link" alt="Contato" onClick={e => loadLink('contato')}>Contato</Link>
+                </li>
+                <li>
+                    <Link href="blog" className="footer-link" alt="Blog" onClick={e => loadLink('blog')}>Blog</Link>
+                </li>
+                <li>
+                    <Link href="gabaritos" className="footer-link" alt="Gabaritos" onClick={e => loadLink('gabaritos')}>Gabaritos</Link>
+                </li>
+                <li>
+                    <Link href="inscreva-se" className="footer-link" alt="Inscreva-se" onClick={e => loadLink('inscreva-se')}>Inscreva-se</Link>
+                </li>
+                <li>
+                    <Link href="newsletter" className="footer-link" alt="Newsletter" onClick={e => loadLink('newsletter')}>Newsletter</Link>
                 </li>
             </ul>
 

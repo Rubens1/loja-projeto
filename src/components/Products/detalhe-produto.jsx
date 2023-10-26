@@ -10,14 +10,14 @@ export default function DetalheProduto() {
     }, [])
   return (
     <>
-      {produtoInfo && produtoInfo.map((produto) => {
-        if(produto.slug == router.query.slugProduto){
+      {produtoInfo && produtoInfo.map((produtoDetalhe) => {
+        if(produtoDetalhe.slug == router.query.slugProduto){
             return(
-                <>
+                <div key={`infProduto-${produtoDetalhe.id}`}>
 
-                    <h2>{produto.nome}</h2>
+                    <h2>{produtoDetalhe.nome}</h2>
                     
-                </>
+                </div>
             )
         }
     })}
