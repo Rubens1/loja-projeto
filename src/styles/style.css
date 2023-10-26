@@ -58,11 +58,12 @@ fieldset{
     justify-content: start;
     border-radius: 0.25rem;
     padding: 0 10px;
-    margin: 10px 0;
+    margin: 10px 5px;
     position: relative;
+    width: 100%;
 }
 legend{
-    left: 25px;
+    left: 24px;
 }
 a{
     text-decoration: none;
