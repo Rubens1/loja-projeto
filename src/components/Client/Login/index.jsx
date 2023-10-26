@@ -3,6 +3,7 @@ import { BiLogoFacebook } from 'react-icons/bi';
 import { AiOutlineGooglePlus } from 'react-icons/ai';
 import axios from "axios";
 import { toast } from "react-toastify";
+import Link from "next/link";
 export default function LoginClient() {
       
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function LoginClient() {
     }).then((response) => {
       console.log(response);
       const token = JSON.stringify(response.data.authorization.token);
-      localStorage.setItem('tokenCliente ', token);
+      localStorage.setItem('tokenCliente', token);
       //window.location.href = window.location.protocol + "//" + window.location.host;
       console.log(response)
       toast.success('Usuário logado com sucesso', {
@@ -108,8 +109,9 @@ export default function LoginClient() {
                       <span>ou use sua senha de e-mail</span>
                       <input type="email" placeholder="Email"  name="email"/>
                       <input type="password" placeholder="Senha"  name="senha"/>
-                      <a href="#">Esqueceu sua senha?</a>
+                      <Link href="/recupera-senha" alt="Recupera senha">Esqueceu sua senha?</Link>
                       <button type="submit">Entrar</button>
+                      <Link href="/cadastra" className="registro-link" alt="Cadastrar">Criar conta</Link>
                   </form>
               </div>
               <div className="toggle-container-site">

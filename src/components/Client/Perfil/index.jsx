@@ -1,23 +1,43 @@
 import Link from "next/link"
+import { useEffect, useState } from "react";
+import axios from "axios";
 export default function Perfil() {
+    const [dadosDoPerfil, setDadosDoPerfil] = useState(null);
+
+    useEffect(() => {
+        let token = localStorage.getItem('tokenCliente').replace(/\"/g, '');
+
+      axios.get(`${process.env.NEXT_PUBLIC_API_URL}pessoa-perfil`,{
+        headers: {
+          'Authorization': `Bearer ${token.replace(" ", "").trim()}`
+        },
+      }).then((response) => {
+
+        setDadosDoPerfil(response.data);
+      }).catch(error => {
+        console.log(error);
+      });
+    }, []);
+    
+    console.log(dadosDoPerfil)
     return (
       <>
-        <section class="usere">
-        <div class="user-profile-container-site">
-            <div class="user-personal-data-container-site">
-                <div class="user-data-title">
+        <section className="usere">
+        <div className="user-profile-container-site">
+            <div className="user-personal-data-container-site">
+                <div className="user-data-title">
                     Dados básicos
                 </div>
-                <div class="button-users">
-                    <Link href="" class="edit-perfil" alt="Alterar Senha">ALTERAR SENHA</Link>
+                <div className="button-users">
+                    <Link href="" className="edit-perfil" alt="Alterar Senha">ALTERAR SENHA</Link>
                 </div>
-                <div class="sensitive-data">
+                <div className="sensitive-data">
 
                 </div>
                 <form action="" method="POST">
                     <fieldset>
                         <legend>Nome</legend>
-                        <input type="text" id="name" name="name" placeholder="Digite o seu email"/>
+                        <input type="text" id="name" name="name" placeholder="Digite o seu nome"/>
                     </fieldset>
                     <fieldset>
                         <legend>Sobrenome</legend>
@@ -34,205 +54,205 @@ export default function Perfil() {
                     
                 </form>
             </div>
-            <div class="user-addr-container-site">
-                <div class="user-addr-form-title">
+            <div className="user-addr-container-site">
+                <div className="user-addr-form-title">
                     Meus endereços
                 </div>
-                <div class="address-card-box">
+                <div className="address-card-box">
     
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button id="modal-button" class="addr-edit">
+                        <div className="actions-btn">
+                            <button id="modal-button" className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                     <div class="address-card">
-                        <span class="addr-title">
+                     <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                     <div class="address-card">
-                        <span class="addr-title">
+                     <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
-                    </div> <div class="address-card">
-                        <span class="addr-title">
+                    </div> <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>
                     </div>
-                    <div class="address-card">
-                        <span class="addr-title">
+                    <div className="address-card">
+                        <span className="addr-title">
                             Endereço pricipal
                         </span>
-                        <span class="address">
+                        <span className="address">
                             <p>Rua Exemplo</p>
                             <p>Número 200 casa 02</p>
                             <p>CEP 05891-240, São Paulo, SP</p>
                         </span>
-                        <div class="actions-btn">
-                            <button class="addr-edit">
+                        <div className="actions-btn">
+                            <button className="addr-edit">
                                 editar
                             </button>
-                            <button class="addr-delete">
+                            <button className="addr-delete">
                                 excluir
                             </button>
                         </div>

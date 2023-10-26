@@ -178,10 +178,31 @@
 .container-siteLogin.active .toggle-right{
     transform: translateX(200%);
 }
-@media (max-width: 800px){
+.registro-link{
+    display: none;
+}
+@media (max-width: 700px){
+    .registro-link{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
     .container-siteLogin{
         display: flex;
         width: 100%;
-        flex-wrap: wrap;
+    }
+    .sign-in{
+        width: 100%;
+    }
+    .form-container-site .sign-up,
+    .toggle-container-site{
+        display: none;
+    }
+    .toggle-panel .toggle-right{
+        display: none;
+    }
+    .form-container-site .sign-in{
+        display: none;
     }
 }

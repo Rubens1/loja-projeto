@@ -90,8 +90,7 @@ export default function Footer() {
         </div>
 
         <div id="footer_copyright">
-            &#169
-            2023 Todos os direitos reservados
+            © 2023 Todos os direitos reservados
         </div>
     </footer>
       </>

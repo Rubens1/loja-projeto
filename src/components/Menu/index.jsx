@@ -22,31 +22,31 @@ export default function Menu() {
         closeMenu.addEventListener('click', () => {
             menuCategoria.classList.remove("active-menu");
         })
-        
-        
+
+
     }, [])
 
     useEffect(() => {
-       const url =  window.location.href
-       setUrlLink(url);
+        const url = window.location.href
+        setUrlLink(url);
     }, [])
     const [urlLink, setUrlLink] = useState();
     const [load, setLoad] = useState(false);
 
     const loadLink = (e) => {
-        if(urlLink.split('/')[3] != e){
+        if (urlLink.split('/')[3] != e) {
             setTimeout(() => setLoad(true), 1000);
         }
-        
+
     }
 
     return (
         <>
-        {load == true ? (
-        <div className="load">
-            <div className="loader"></div>
-        </div>
-      ) : ''}
+            {load == true ? (
+                <div className="load">
+                    <div className="loader"></div>
+                </div>
+            ) : ''}
             <header>
                 <div className="container-site">
                     <div className="top">
@@ -85,7 +85,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="" onClick={e => loadLink()}>teste</Link>
+                                                            <Link href="" onClick={e => loadLink()}>teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="" onClick={e => loadLink()}>teste</Link>
@@ -105,7 +105,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -125,7 +125,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -145,7 +145,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -165,7 +165,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -185,7 +185,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -205,7 +205,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -225,7 +225,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -245,7 +245,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -265,7 +265,7 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                        <Link href="">teste</Link>
+                                                            <Link href="">teste</Link>
                                                         </li>
                                                         <li>
                                                             <Link href="">teste</Link>
@@ -303,7 +303,7 @@ export default function Menu() {
                         </form>
                     </div>
                     <div className='product-menu-mobile'>
-                    <div className="menu-mobile" id="menu-product"><AiOutlineBars />Produtos</div>
+                        <div className="menu-mobile" id="menu-product"><AiOutlineBars />Produtos</div>
                     </div>
                     <div className="categories-info-mobile" id="info-categories">
                         <div className="info-categories">

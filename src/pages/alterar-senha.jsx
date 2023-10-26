@@ -1,16 +1,16 @@
 import Menu from '../components/Menu'
 import Head from 'next/head'
 import Footer from '../components/Footer'
-import MapaDoSite from '../components/MapaDoSite'
+import LoginClient from '../components/Client/Login'
 
-export default function MapaSite() {
+export default function AlterarSenha() {
   return (
     <>
     <Head>
-      <title>Mapa do site</title>
+      <title>Login</title>
     </Head>
       <Menu />
-      <MapaDoSite />
+      <LoginClient />
       <Footer />
     </>
   )
