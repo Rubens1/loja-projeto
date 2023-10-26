@@ -3,20 +3,24 @@ import { BsCheckLg } from 'react-icons/bs';
 import { AiOutlineDelete } from 'react-icons/ai';
 import Image from "next/image";
 import image from '@/public/image-1.jpg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 export default function Shop() {
 
     const [validarCupom, setValidarCupom] = useState(false)
     const [carrinho, setCarrinho] = useState([
-        {id: 1,imagem: image, nome: "Produto 1", quantidade: 1, valor: "23.00"},
-        {id: 2,imagem: image, nome: "Produto 2", quantidade: 1, valor: "20.00"},
-        {id: 3,imagem: image, nome: "Produto 3", quantidade: 1, valor: "18.00"},
-        {id: 4,imagem: image, nome: "Produto 4", quantidade: 1, valor: "33.00"},
-        {id: 5,imagem: image, nome: "Produto 5", quantidade: 1, valor: "16.00"}
+        {id: 1,imagem: image, nome: "Produto 1", quantidade: 1, valor: 23.25},
+        {id: 2,imagem: image, nome: "Produto 2", quantidade: 1, valor: 20.20},
+        {id: 3,imagem: image, nome: "Produto 3", quantidade: 1, valor: 18.50},
+        {id: 4,imagem: image, nome: "Produto 4", quantidade: 1, valor: 33.70},
+        {id: 5,imagem: image, nome: "Produto 5", quantidade: 1, valor: 16.70}
 
     ]);
-    
+    const [valorTotal, setValorTotal] = useState(0);
+    const valorTotalFormatado = valorTotal.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    });
     const cupons = [
         { value: '1', label: 'Todos' },
         { value: '2', label: 'Cliente' },
@@ -88,8 +92,21 @@ export default function Shop() {
           }
         }
       };
-      const total = carrinho.quantidade * carrinho.valor
-      console.log(total)
+
+      // Função para calcular o valor total
+      const calcularValorTotal = (carrinho) => {
+          let total = 0;
+          for (const produto of carrinho) {
+              total += parseFloat(produto.valor) * produto.quantidade;
+          }
+          return total;
+      }
+  
+      useEffect(() => {
+        // Atualize o valor total sempre que o carrinho for alterado
+        setValorTotal(calcularValorTotal(carrinho));
+    }, [carrinho]);
+
     return (
       <>
         <section className="cart">
@@ -99,7 +116,8 @@ export default function Shop() {
                     <div className="info-card">
                         <div className="products">
                             <div className="my-product">
-                            {carrinho.map((produtoCarrinho, key) => (
+                            {carrinho.map((produtoCarrinho, key) => {
+                                return(
 
                                 <div className="card-shop" key={`carrinho-${produtoCarrinho.id}`}>
                                     <div className="image-shop">
@@ -114,9 +132,9 @@ export default function Shop() {
                                             <button onClick={() => agregarProduto(produtoCarrinho)}>+</button>
                                         </div>
                                     </div>
-                                    <div className="price-shop">Valor<p></p><b>R$ {produtoCarrinho.valor}</b></div>
+                                    <div className="price-shop">Valor<p></p><b>{produtoCarrinho.valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b></div>
                                 </div>
-                            ))}
+                            )})}
                             </div>
                             <div className="indicated-product">
                                 <div className="card-shop-product">
@@ -150,10 +168,9 @@ export default function Shop() {
                             <div className="result-total">
                                 <div className="info-total">
                                     <h3>Resultado</h3>
-                                    <div className="value-itens">Produtos <b>R$ 30.,00</b></div>
                                     <div className="frete">Frete <b>R$ 30,00</b></div>
                                     <div className="cupom-result">Cupom <b>-</b></div>
-                                    <div className="result-shop">Total <b>R$ 30,00</b></div>
+                                    <div className="result-shop">Total <b>{valorTotalFormatado}</b></div>
                                 </div>
                             </div>
                             <div className="prev-shop">

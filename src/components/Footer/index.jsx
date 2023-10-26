@@ -86,9 +86,6 @@ export default function Footer() {
                 <li>
                     <Link href="inscreva-se" className="footer-link" alt="Inscreva-se" onClick={e => loadLink('inscreva-se')}>Inscreva-se</Link>
                 </li>
-                <li>
-                    <Link href="newsletter" className="footer-link" alt="Newsletter" onClick={e => loadLink('newsletter')}>Newsletter</Link>
-                </li>
             </ul>
 
             <div id="footer_subscribe">
