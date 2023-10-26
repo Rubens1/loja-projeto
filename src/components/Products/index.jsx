@@ -11,7 +11,6 @@ export default function Products() {
         {id: 3,imagem: produtoImg, nome: "Produto 3", valor: "R$ 18,00", slug: "produto-3"},
         {id: 4,imagem: produtoImg, nome: "Produto 4", valor: "R$ 33,00", slug: "produto-4"},
         {id: 5,imagem: produtoImg, nome: "Produto 5", valor: "R$ 16,00", slug: "produto-5"}
-
     ];
 
     useEffect(() => {
