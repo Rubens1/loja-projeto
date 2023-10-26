@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import produtoImg from '@/public/image-2.jpg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 export default function Products() {
 
     const produtos = [
@@ -13,8 +13,10 @@ export default function Products() {
         {id: 5,imagem: produtoImg, nome: "Produto 5", valor: "R$ 16,00", slug: "produto-5"}
 
     ];
-    
-    localStorage.setItem('produtos', JSON.stringify(produtos));
+
+    useEffect(() => {
+        localStorage.setItem('produtos', JSON.stringify(produtos));
+    })
 
   return (
     <>

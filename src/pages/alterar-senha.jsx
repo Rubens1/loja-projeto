@@ -7,7 +7,7 @@ export default function AlterarSenha() {
   return (
     <>
     <Head>
-      <title>Login</title>
+      <title>Alterar a Senha</title>
     </Head>
       <Menu />
       <LoginClient />
