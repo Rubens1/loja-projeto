@@ -1,4 +1,4 @@
-header{
+header {
     background-color: var(--color-white);
     color: var(--color-black);
     padding: 10px;
@@ -7,52 +7,63 @@ header{
     align-items: center;
     position: relative;
 }
-.mobile-top{
+
+.mobile-top {
     display: none;
 }
-.contact-top{
+
+.contact-top {
     display: flex;
     flex-direction: row;
     justify-content: end;
 }
-.contact-top{
+
+.contact-top {
     font-size: 12px;
     font-weight: 400;
 }
-.contact-top a{
+
+.contact-top a {
     transition: var(--tran-05);
 }
-.contact-top a:hover{
+
+.contact-top a:hover {
     text-decoration: underline;
 }
-.top-flex{
+
+.top-flex {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.top-flex.active{
+
+.top-flex.active {
     position: fixed;
 }
-.top-flex .logo{
+
+.top-flex .logo {
     width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo img{
+
+.logo img {
     max-width: 200px;
     width: 100%;
     max-height: 200px;
     height: 80px;
 }
-.top-flex .form-search{
+
+.top-flex .form-search {
     display: flex;
     justify-content: center;
     max-width: 700px;
     width: 100%;
     align-items: center;
 }
-.form-search .search{
+
+.form-search .search {
     background-color: var(--color-white);
     padding: 2px;
     border: 1px solid var(--color-black);
@@ -62,15 +73,18 @@ header{
     justify-content: center;
     width: 550px;
 }
-.search .search-input{
+
+.search .search-input {
     border: none;
     width: 100%;
 }
-.search .search-input:focus{
+
+.search .search-input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
 }
-.search .btn-search{
+
+.search .btn-search {
     border-radius: 0.25rem;
     background-color: var(--color-black);
     color: var(--color-white);
@@ -80,35 +94,42 @@ header{
     justify-content: center;
     align-items: center;
 }
-.top-flex .info{
+
+.top-flex .info {
     width: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 10px;
 }
-.top-flex .info ul{
+
+.top-flex .info ul {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.info svg{
+
+.info svg {
     font-size: 2rem;
 }
-.menu{
+
+.menu {
     display: flex;
     width: 100%;
     justify-content: center;
 }
-.menu ul{
+
+.menu ul {
     display: flex;
     flex-direction: row;
 }
-.menu ul li{
+
+.menu ul li {
     margin: 0 10px;
 }
+
 .menu-desktop ul li ul {
     display: none;
     opacity: 0;
@@ -117,6 +138,7 @@ header{
     top: 93%;
     z-index: 9999;
 }
+
 .menu-desktop ul li:hover ul {
     transition: var(--tran-02);
     display: flex;
@@ -124,6 +146,7 @@ header{
     width: 100%;
     height: 100%;
 }
+
 .menu-desktop ul li ul .submenu {
     display: flex;
     flex-direction: row;
@@ -132,7 +155,8 @@ header{
     height: 100%;
     top: 90px;
 }
-.container-site-submenu{
+
+.container-site-submenu {
     border-top: 1px solid var(--color-grey);
     border-radius: 10px;
     padding: 20px;
@@ -143,33 +167,41 @@ header{
     width: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
+
 .categories {
     display: flex;
     flex-direction: column;
 }
+
 .container-site-submenu li,
 .container-site-submenu span {
     color: var(--color-black);
 }
-.container-site-submenu li{
+
+.container-site-submenu li {
     font-weight: 300;
     padding: 2px 0;
     font-size: 15px;
 }
-.container-site-submenu li:hover  a{
+
+.container-site-submenu li:hover a {
     color: var(--color-red);
 }
+
 .container-site-submenu span {
     margin-bottom: 10px;
     font-weight: bold;
-} 
-.car-shop{
+}
+
+.car-shop {
     position: relative;
 }
-.car-shop:hover{
+
+.car-shop:hover {
     opacity: 0.7;
 }
-.car-shop span{
+
+.car-shop span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,80 +216,99 @@ header{
     font-size: 12px;
     font-weight: 200;
 }
-@media (max-width: 1130px){
-    .top-flex .form-search{
+
+@media (max-width: 1130px) {
+    .top-flex .form-search {
         max-width: 550px;
     }
-    .form-search .search{
+
+    .form-search .search {
         width: 450px;
     }
-    .top-flex .info{
+
+    .top-flex .info {
         width: 250px;
     }
-    .top-flex .logo{
+
+    .top-flex .logo {
         width: 150px;
     }
 }
-@media (max-width: 950px){
-    .top-flex .form-search{
+
+@media (max-width: 950px) {
+    .top-flex .form-search {
         width: 450px;
     }
-    .form-search .search{
+
+    .form-search .search {
         width: 400px;
     }
-    .top-flex .info{
+
+    .top-flex .info {
         width: 190px;
     }
-    .top-flex .logo{
+
+    .top-flex .logo {
         width: 150px;
     }
 }
-@media (max-width: 850px){
+
+@media (max-width: 850px) {
+
     .top,
-    .menu{
+    .menu {
         display: none;
     }
-    .mobile-top{
+
+    .mobile-top {
         display: flex;
         flex-direction: column;
         width: 100%;
-       
+
     }
-    .mobile-top .contact-mobile{
+
+    .mobile-top .contact-mobile {
         display: flex;
         flex-direction: row;
         justify-content: end;
     }
-    .mobile-top .logo-info{
+
+    .mobile-top .logo-info {
         padding: 10px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
-    .logo-info img{
+
+    .logo-info img {
         max-width: 100px;
         width: 100%;
         max-height: 100px;
         height: 100%;
     }
-    .mobile-top .info-mobile ul{
+
+    .mobile-top .info-mobile ul {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    .mobile-top .info-mobile ul li{
+
+    .mobile-top .info-mobile ul li {
         margin: 0 10px;
     }
-    .info-mobile svg{
+
+    .info-mobile svg {
         font-size: 2rem;
     }
-    .search-mobile{
+
+    .search-mobile {
         justify-content: center;
         width: 100%;
         align-items: center;
     }
-    .search-mobile .search{
+
+    .search-mobile .search {
         background-color: var(--color-white);
         padding: 2px;
         border: 1px solid var(--color-black);
@@ -266,29 +317,34 @@ header{
         flex-direction: row;
         justify-content: center;
     }
-    .menu-mobile{
+
+    .menu-mobile {
         margin-top: 5px;
         display: flex;
         cursor: pointer;
         font-size: 20px;
     }
-    .menu-mobile svg{
+
+    .menu-mobile svg {
         font-size: 1.7rem;
         margin-right: 10px;
     }
-    .product-menu-mobile{
+
+    .product-menu-mobile {
         display: flex;
         width: 100%;
         justify-content: start;
     }
-    .categories-info-mobile{
+
+    .categories-info-mobile {
         top: 0;
         left: 0;
         position: absolute;
         height: 100vh;
         z-index: 999;
     }
-    .info-categories{
+
+    .info-categories {
         top: 0;
         position: fixed;
         left: 0;
@@ -297,30 +353,36 @@ header{
         background-color: var(--color-white);
         transition: all 0.2s ease;
     }
-    .info-categories ul li{
+
+    .info-categories ul li {
         margin: 15px 0;
     }
-    .info-categories.active-menu ul{
+
+    .info-categories.active-menu ul {
         opacity: 1;
         transition: var(--tran-05);
     }
-    .info-categories.active-menu{
+
+    .info-categories.active-menu {
         padding: 10px 14px;
         width: 290px;
     }
-    .info-categories ul{
+
+    .info-categories ul {
         opacity: 0;
         pointer-events: none;
         display: none;
         transition: var(--tran-05);
     }
-    .info-categories.active-menu ul{
+
+    .info-categories.active-menu ul {
         opacity: 1;
         pointer-events: none;
         display: block;
         transition: var(--tran-02);
     }
-    .close-mobile{
+
+    .close-mobile {
         display: flex;
         opacity: 1;
         transition: var(--tran-05);
@@ -328,7 +390,8 @@ header{
         font-size: 25px;
         padding: 10px;
     }
-    .close-button{
+
+    .close-button {
         display: flex;
         justify-content: end;
     }

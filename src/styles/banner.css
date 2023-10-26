@@ -1,20 +1,23 @@
-.banners{
+.banners {
     display: flex;
     width: 100%;
     margin: 2rem 0;
-    justify-content: center; 
+    justify-content: center;
 }
-.banners-three{
+
+.banners-three {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
-.info-banner{
+
+.info-banner {
     margin: 3px;
 }
-.info-banner img{
+
+.info-banner img {
     border-radius: 10px;
     width: 350px;
     height: 150px;

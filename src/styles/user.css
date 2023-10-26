@@ -1,10 +1,11 @@
-.user{
+.user {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     padding: 1rem;
 }
+
 .user-profile-container-site {
     padding: 20px;
     width: 1200px;
@@ -14,6 +15,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
 .user-addr-container-site,
 .user-personal-data-container-site {
     width: 100%;
@@ -23,22 +25,26 @@
     /* text-align: center; */
     margin: 12px;
 }
+
 .user-addr-container-site form,
 .user-personal-data-container-site form {
     display: flex;
     flex-direction: column;
 }
+
 .user-addr-container-site input,
 .user-personal-data-container-site input {
     border: none;
     width: 100%;
     padding: 5px;
 }
+
 .user-addr-container-site input:focus,
-.user-personal-data-container-site input:focus{
+.user-personal-data-container-site input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
 }
+
 .address-card-box {
     overflow-Y: scroll;
     display: flex;
@@ -47,46 +53,55 @@
     height: 350px;
     padding: 10px;
 }
+
 .address-card {
     text-align: left;
     border: 1px solid var(--color-grey);
     border-radius: 0.25rem;
-    margin:  10px 0;
+    margin: 10px 0;
     padding: 20px;
-    
+
 }
-.addr-title{
+
+.addr-title {
     font-weight: 700;
 }
-.actions-btn{
+
+.actions-btn {
     margin-top: 1rem;
 }
-.actions-btn button{
+
+.actions-btn button {
     padding: 10px;
     border-radius: 5px;
     margin: 0 5px;
 }
+
 .actions-btn {
     position: relative;
     text-align: right;
 }
+
 .addr-delete {
     background-color: var(--color-red);
     color: var(--color-white);
 }
+
 .user-addr-form-title,
 .user-data-title {
     display: flex;
     justify-content: center;
     font-size: 1.7rem;
-    font-weight:  800;
+    font-weight: 800;
 }
-.button-users{
+
+.button-users {
     width: 100%;
     display: flex;
     justify-content: end;
 }
-.button-users .edit-perfil{
+
+.button-users .edit-perfil {
     margin: 10px 0;
     padding: 10px;
     width: 200px;
@@ -96,10 +111,12 @@
     border-radius: 0.30rem;
     transition: var(--tran-07);
 }
-.button-users .edit-perfil:hover{
+
+.button-users .edit-perfil:hover {
     background-color: var(--color-green);
     color: var(--color-white);
 }
+
 .modal {
     top: 0;
     position: fixed;
@@ -110,6 +127,7 @@
     height: 100vh;
     width: 100%;
 }
+
 .modal-container-site {
     top: 0;
     position: absolute;
@@ -119,45 +137,54 @@
     height: 100vh;
     width: 100%;
 }
-.modal-info{
+
+.modal-info {
     height: 500px;
     width: 500px;
     background-color: var(--color-white);
     border-radius: 5px;
     padding: 10px;
 }
+
 .active {
     transition: var(--tran-04);
     display: block;
 }
+
 .close {
     display: none;
 }
-.close-modal{
+
+.close-modal {
     width: 100%;
     display: flex;
     justify-content: end;
     padding: 10px;
     border-bottom: 1px solid var(--color-grey);
 }
+
 .close-btn {
     cursor: pointer;
     font-size: 1.7rem;
     color: var(--color-red);
 }
-.form-group{
+
+.form-group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 @media (max-width: 850px) {
-    .user-profile-container-site{
+    .user-profile-container-site {
         flex-wrap: wrap;
     }
-    .address-card{
+
+    .address-card {
         width: 100%;
     }
-    .form-group{
+
+    .form-group {
         flex-wrap: wrap;
     }
 }

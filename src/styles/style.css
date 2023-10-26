@@ -1,12 +1,14 @@
-@font-face{
+@font-face {
     font-family: "SF Pro Text Regular";
     src: url("./../../public/fonts/sf-pro-text-regular.ttf")format("truetype");
 }
-@font-face{
+
+@font-face {
     font-family: "SF Pro Text Bold";
     src: url("./../../public/fonts/sf-pro-text-bold.ttf")format("truetype");
 }
-:root{
+
+:root {
     --color-body: #edf1f7;
     --color-red: #ff0000;
     --color-black: #000;
@@ -38,22 +40,26 @@
     --tran-03: all 0.3s ease;
     --tran-02: all 0.2s ease;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* font-family: 'Poppins', sans-serif; */
 }
-body{
+
+body {
     font-family: "SF Pro Text Regular", sans-serif;
     min-height: 100vh;
     background-color: var(--color-body);
     position: relative;
 }
-h2{
+
+h2 {
     font-family: "SF Pro Text Regular";
 }
-fieldset{
+
+fieldset {
     display: flex;
     justify-content: start;
     border-radius: 0.25rem;
@@ -62,72 +68,88 @@ fieldset{
     position: relative;
     width: 100%;
 }
-legend{
+
+legend {
     left: 24px;
 }
-a{
+
+a {
     text-decoration: none;
     color: var(--color-black);
 }
-ul li{
+
+ul li {
     display: flex;
 }
-.link-menu:hover{
-   color: var(--color-grey1);
+
+.link-menu:hover {
+    color: var(--color-grey1);
     transition: .2s;
 }
-button{
+
+button {
     cursor: pointer;
     padding: 5px;
     border: none;
 }
-input{
+
+input {
     padding: 10px;
 }
-.container-site{
+
+.container-site {
     max-width: 1100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .map-site,
 .term-of-use,
 .term-of-polity,
-.about-section{
+.about-section {
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 2rem 0;
 }
+
 .map-site h2,
-.map-site h3{
+.map-site h3 {
     font-weight: 500;
 }
-.map-site h2{
+
+.map-site h2 {
     font-size: 1.7rem;
 }
-.map-site h3{
+
+.map-site h3 {
     font-size: 1.7rem;
     margin-top: 1.7rem;
     margin-bottom: 10px;
 }
-.router{
+
+.router {
     margin: 1rem 0;
     font-size: 13px;
     font-weight: 400;
 }
-.router a{
+
+.router a {
     color: var(--color-button);
 }
-.page-site{
+
+.page-site {
     width: 1070px;
 }
-.view-map{
+
+.view-map {
     display: flex;
     flex-direction: column;
 }
-.links{
+
+.links {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -135,59 +157,69 @@ input{
     flex-wrap: wrap;
     margin: 1rem 0;
 }
-.link{
+
+.link {
     font-weight: 200;
     margin: 1rem 1.4rem;
 }
 
-.link a span{
+.link a span {
     font-weight: 600;
 }
-.link a:hover{
+
+.link a:hover {
     transition: var(--tran-03);
     opacity: 0.4;
 }
+
 .term-user h4,
-.term-polity h4{
+.term-polity h4 {
     font-size: 2rem;
     font-weight: 300;
 }
+
 .term,
-.about-info{
+.about-info {
     margin: 1rem 0;
     max-width: 1200px;
     padding: 10px;
     border-radius: 10px;
     background-color: var(--color-white);
 }
-.about-info{
+
+.about-info {
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
 }
-.about-info .img-about{
+
+.about-info .img-about {
     max-width: 800px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.img-about img{
+
+.img-about img {
     max-width: 500px;
     width: 100%;
     max-height: 500px;
     height: 100%;
 }
-.about{
+
+.about {
     width: 100%;
     margin: 0 10px;
 }
-.about h2{
+
+.about h2 {
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 2rem;
 }
-.load{
+
+.load {
     top: 0;
     left: 0;
     display: flex;
@@ -199,21 +231,26 @@ input{
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 99999;
 }
-@media (max-width: 1200px){
-    .about-info{
+
+@media (max-width: 1200px) {
+    .about-info {
         flex-wrap: wrap;
     }
-    .about-info .img-about{
+
+    .about-info .img-about {
         margin-bottom: 2rem;
     }
-    .map-site{
+
+    .map-site {
         margin: 0;
         justify-content: start;
     }
-    .map{
+
+    .map {
         width: 100%;
     }
-    .about-info .img-about{
+
+    .about-info .img-about {
         display: flex;
         justify-content: center;
         max-width: none;

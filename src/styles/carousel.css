@@ -1,27 +1,31 @@
-
-.slide-container-site{
+.slide-container-site {
     position: relative;
     width: 100%;
     height: 450px;
-    box-shadow: 0 0 8px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 }
-.slide-container-site .slides{
+
+.slide-container-site .slides {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
 }
-.slide-container-site .slides img{
+
+.slide-container-site .slides img {
     width: 100%;
     height: 100%;
     position: absolute;
     object-fit: cover;
 }
-.slide-container-site .slides img:not(.active){
+
+.slide-container-site .slides img:not(.active) {
     top: 0;
     left: -100%;
 }
-.slides-buttons span.next, span.prev{
+
+.slides-buttons span.next,
+span.prev {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -35,25 +39,31 @@
     cursor: pointer;
     z-index: 1;
 }
-.slides-buttons span.next{
+
+.slides-buttons span.next {
     right: 20px;
 }
-.slides-buttons span.prev{
+
+.slides-buttons span.prev {
     left: 20px;
 }
-.slides-buttons span.next:hover, .slides-buttons span.prev:hover{
+
+.slides-buttons span.next:hover,
+.slides-buttons span.prev:hover {
     background-color: #ede6d6;
     opacity: 0.8;
     color: #222;
-} 
-.dotscontainer-site{
+}
+
+.dotscontainer-site {
     position: absolute;
     bottom: 5px;
     z-index: 3;
     left: 50%;
     transform: translateX(-50%);
 }
-.dotscontainer-site .dot{
+
+.dotscontainer-site .dot {
     width: 15px;
     height: 15px;
     margin: 0px 2px;
@@ -63,39 +73,47 @@
     cursor: pointer;
     transition: background-color 0.6s ease;
 }
-.dotscontainer-site .active{
+
+.dotscontainer-site .active {
     background-color: #555;
 }
 
-@keyframes next1{
-    from{
+@keyframes next1 {
+    from {
         left: 0%
     }
-    to{
+
+    to {
         left: -100%;
     }
 }
-@keyframes next2{
-    from{
+
+@keyframes next2 {
+    from {
         left: 100%
     }
-    to{
+
+    to {
         left: 0%;
     }
 }
-@keyframes prev1{
-    from{
+
+@keyframes prev1 {
+    from {
         left: 0%
     }
-    to{
+
+    to {
         left: 100%;
     }
 }
-@keyframes prev2{
-    from{
+
+@keyframes prev2 {
+    from {
         left: -100%
     }
-    to{
+
+    to {
         left: 0%;
     }
 }
