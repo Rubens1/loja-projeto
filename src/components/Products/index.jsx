@@ -5,7 +5,6 @@ import produtoImg from '@/public/image-2.jpg';
 import { useState } from 'react';
 export default function Products() {
 
-
     const produtos = [
         {id: 1,imagem: produtoImg, nome: "Produto 1", valor: "R$ 23,00", slug: "produto-1"},
         {id: 2,imagem: produtoImg, nome: "Produto 2", valor: "R$ 20,00", slug: "produto-2"},
@@ -14,6 +13,8 @@ export default function Products() {
         {id: 5,imagem: produtoImg, nome: "Produto 5", valor: "R$ 16,00", slug: "produto-5"}
 
     ];
+    
+    localStorage.setItem('produtos', JSON.stringify(produtos));
 
   return (
     <>

@@ -1,3 +1,11 @@
+@font-face{
+    font-family: "SF Pro Text Regular";
+    src: url("./../../public/fonts/sf-pro-text-regular.ttf") format("truetype");
+}
+@font-face{
+    font-family: "SF Pro Text Bold";
+    src: url("./../../public/fonts/sf-pro-text-bold.ttf")format("truetype");
+}
 :root{
     --color-body: #edf1f7;
     --color-red: #ff0000;
@@ -34,12 +42,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
 }
 body{
+    font-family: "SF Pro Text Regular", sans-serif;
     min-height: 100vh;
     background-color: var(--color-body);
     position: relative;
+}
+h2{
+    font-family: "SF Pro Text Regular";
 }
 fieldset{
     display: flex;

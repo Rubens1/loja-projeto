@@ -5,14 +5,26 @@ import { useRouter } from 'next/router';
 
 export default function DetalheProduto() {
     const router = useRouter()
-    console.log(router.query.slugProduto);
+    const produtosJSON = localStorage.getItem('produtos');
+    const produtos = JSON.parse(produtosJSON);
+    
   return (
     <>
     <Head>
       <title>Produto</title>
     </Head>
       <Menu />
-            <h2>{router.query.slugProduto}</h2>
+      {produtos.map((produto) => {
+        if(produto.slug == router.query.slugProduto){
+            return(
+                <>
+
+                    <h2>{produto.nome}</h2>
+                    
+                </>
+            )
+        }
+    })}
       <Footer />
     </>
   )
