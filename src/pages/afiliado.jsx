@@ -5,11 +5,10 @@ import Footer from '../components/Footer'
 export default function Afiliado() {
   return (
     <>
-    <Head>
-      <title>Seja um afiliado</title>
-    </Head>
+      <Head>
+        <title>Seja um afiliado</title>
+      </Head>
       <Menu />
-      
       <Footer />
     </>
   )

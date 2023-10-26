@@ -6,9 +6,9 @@ import TermoUso from '../components/TermoUso'
 export default function Termo() {
   return (
     <>
-    <Head>
-      <title>Termos de uso</title>
-    </Head>
+      <Head>
+        <title>Termos de uso</title>
+      </Head>
       <Menu />
       <TermoUso />
       <Footer />

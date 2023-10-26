@@ -6,9 +6,9 @@ import SobreNos from '../components/SobreNos'
 export default function Empresa() {
   return (
     <>
-    <Head>
-      <title>Sobre nós</title>
-    </Head>
+      <Head>
+        <title>Sobre nós</title>
+      </Head>
       <Menu />
       <SobreNos />
       <Footer />

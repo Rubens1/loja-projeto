@@ -9,9 +9,9 @@ import Banner from '../components/Banner'
 export default function Home() {
   return (
     <>
-    <Head>
-      <title>Inicio</title>
-    </Head>
+      <Head>
+        <title>Início</title>
+      </Head>
       <Menu />
       <Carousel />
       <Category />

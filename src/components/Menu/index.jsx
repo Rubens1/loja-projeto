@@ -4,8 +4,11 @@ import logo from '@/public/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Menu() {
+    const router = useRouter();
+
     const [urlLink, setUrlLink] = useState();
     const [load, setLoad] = useState(false);
 
@@ -14,32 +17,24 @@ export default function Menu() {
         const menu = document.querySelector('#menu-product'),
             menuCategoria = document.querySelector(".info-categories"),
             closeMenu = document.querySelector(".close-mobile");
-
-
         menu.addEventListener('click', () => {
             menuCategoria.classList.add('active-menu');
         })
-
-
         closeMenu.addEventListener('click', () => {
             menuCategoria.classList.remove("active-menu");
         })
-
-
-    }, [])
+    }, []);
 
     useEffect(() => {
-        const url = window.location.href
+        const url = window.location.href;
         setUrlLink(url);
-    }, [])
-    
+    }, []);
+
     const loadLink = (e) => {
         if (urlLink.split('/')[3] != e) {
             setTimeout(() => setLoad(true), 1000);
         }
-
-    }
-
+    };
     return (
         <>
             {load == true ? (
@@ -60,16 +55,16 @@ export default function Menu() {
                             <div className="form-search">
                                 <form action="" method="post">
                                     <div className="search">
-                                        <input placeholder="O que você procura?" type="search" name="" id="" className="search-input" />
+                                        <input placeholder="O que você procura?" type="search" name="busca" id="" className="search-input" />
                                         <button className="btn-search"><AiOutlineSearch /></button>
                                     </div>
                                 </form>
                             </div>
                             <div className="info">
                                 <ul>
-                                    <li><Link href="contato" onClick={e => loadLink('contato')}>Contato</Link></li>
-                                    <li><Link href="login" onClick={e => loadLink('login')}>Entrar</Link></li>
-                                    <li className='car-shop'><Link href="carrinho" onClick={e => loadLink('carrinho')}><BsCart3 /><span>2</span></Link></li>
+                                    <li><Link href="contato" onClick={() => loadLink('contato')}>Contato</Link></li>
+                                    <li><Link href="login" onClick={() => loadLink('login')}>Entrar</Link></li>
+                                    <li className='car-shop'><Link href="carrinho" onClick={() => loadLink('carrinho')}><BsCart3 /><span>2</span></Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -85,10 +80,10 @@ export default function Menu() {
                                                     <span>Categoria</span>
                                                     <div className="list-category">
                                                         <li>
-                                                            <Link href="" onClick={e => loadLink()}>teste</Link>
+                                                            <Link href="" onClick={() => loadLink()}>teste</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="" onClick={e => loadLink()}>teste</Link>
+                                                            <Link href="" onClick={() => loadLink()}>teste</Link>
                                                         </li>
 
                                                     </div>
@@ -288,8 +283,8 @@ export default function Menu() {
                         <div className="logo-mobile"><Link href="./"><Image src={logo} alt="Cardpress" /></Link></div>
                         <div className="info-mobile">
                             <ul>
-                                <li><Link href="contato" onClick={e => loadLink('contato')}>Contato</Link></li>
-                                <li><Link href="login" onClick={e => loadLink('login')}>Entrar</Link></li>
+                                <li><Link href="contato" onClick={() => loadLink('contato')}>Contato</Link></li>
+                                <li><Link href="login" onClick={() => loadLink('login')}>Entrar</Link></li>
                                 <li className='car-shop'><Link href="carrinho" onClick={e => loadLink('carrinho')}><BsCart3 /><span>2</span></Link></li>
                             </ul>
                         </div>
@@ -311,11 +306,11 @@ export default function Menu() {
                                 <div className="close-mobile">X</div>
                             </div>
                             <ul>
-                                <li><Link href="" alt="link" onClick={e => loadLink()}></Link>Inicio</li>
-                                <li><Link href="" alt="link" onClick={e => loadLink()}></Link>Inicio</li>
-                                <li><Link href="" alt="link" onClick={e => loadLink()}></Link>Inicio</li>
-                                <li><Link href="" alt="link" onClick={e => loadLink()}></Link>Inicio</li>
-                                <li><Link href="" alt="link" onClick={e => loadLink()}></Link>Inicio</li>
+                                <li><Link href="" alt="link" onClick={() => loadLink()}></Link>Inicio</li>
+                                <li><Link href="" alt="link" onClick={() => loadLink()}></Link>Inicio</li>
+                                <li><Link href="" alt="link" onClick={() => loadLink()}></Link>Inicio</li>
+                                <li><Link href="" alt="link" onClick={() => loadLink()}></Link>Inicio</li>
+                                <li><Link href="" alt="link" onClick={() => loadLink()}></Link>Inicio</li>
                             </ul>
                         </div>
                     </div>

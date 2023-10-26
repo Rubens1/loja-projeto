@@ -6,9 +6,9 @@ import LoginClient from '../components/Client/Login'
 export default function Login() {
   return (
     <>
-    <Head>
-      <title>Login</title>
-    </Head>
+      <Head>
+        <title>Login</title>
+      </Head>
       <Menu />
       <LoginClient />
       <Footer />

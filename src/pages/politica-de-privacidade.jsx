@@ -6,9 +6,9 @@ import PoliticaPrivacidade from '../components/PoliticaPrivacidade'
 export default function Contato() {
   return (
     <>
-    <Head>
-      <title>Política de privacidade</title>
-    </Head>
+      <Head>
+        <title>Política de privacidade</title>
+      </Head>
       <Menu />
       <PoliticaPrivacidade />
       <Footer />

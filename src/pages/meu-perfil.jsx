@@ -6,11 +6,11 @@ import Perfil from '../components/Client/Perfil'
 export default function MinhaConta() {
   return (
     <>
-    <Head>
-      <title>Bem-vindo Rubens</title>
-    </Head>
+      <Head>
+        <title>Bem-vindo</title>
+      </Head>
       <Menu />
-        <Perfil />
+      <Perfil />
       <Footer />
     </>
   )

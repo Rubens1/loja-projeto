@@ -7,13 +7,14 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 export default function Shop() {
 
-    const [validarCupom, setValidarCupom] = useState(false)
+    const [validarCupom, setValidarCupom] = useState(false);
+    const [validarCep, setValidarCep] = useState(false);
     const [carrinho, setCarrinho] = useState([
-        {id: 1,imagem: image, nome: "Produto 1", quantidade: 1, valor: 23.25},
-        {id: 2,imagem: image, nome: "Produto 2", quantidade: 1, valor: 20.20},
-        {id: 3,imagem: image, nome: "Produto 3", quantidade: 1, valor: 18.50},
-        {id: 4,imagem: image, nome: "Produto 4", quantidade: 1, valor: 33.70},
-        {id: 5,imagem: image, nome: "Produto 5", quantidade: 1, valor: 16.70}
+        { id: 1, imagem: image, nome: "Produto 1", quantidade: 1, valor: 23.25 },
+        { id: 2, imagem: image, nome: "Produto 2", quantidade: 1, valor: 20.20 },
+        { id: 3, imagem: image, nome: "Produto 3", quantidade: 1, valor: 18.50 },
+        { id: 4, imagem: image, nome: "Produto 4", quantidade: 1, valor: 33.70 },
+        { id: 5, imagem: image, nome: "Produto 5", quantidade: 1, valor: 16.70 }
 
     ]);
     const [valorTotal, setValorTotal] = useState(0);
@@ -31,154 +32,156 @@ export default function Shop() {
     const inputCupon = (e) => {
         e.preventDefault();
         let resultado = e.target;
-        
+
         let cuponEncontrado = false;
-    
+
         cupons.forEach(item => {
             if (item.label === resultado.desconto.value) {
                 cuponEncontrado = true;
             }
         });
-    
         if (cuponEncontrado) {
             setValidarCupom(false);
-            console.log("Cupom aceito");
         } else {
             setValidarCupom(true);
-            console.log("Nenhum cupom aceito");
         }
-    }    
+    };
 
     const agregarProduto = (produto) => {
         const index = carrinho.findIndex(item => item.id === produto.id);
-        
         if (index !== -1) {
-          const novoCarrinho = [...carrinho];
-          novoCarrinho[index].quantidade++;
-          setCarrinho(novoCarrinho);
+            const novoCarrinho = [...carrinho];
+            novoCarrinho[index].quantidade++;
+            setCarrinho(novoCarrinho);
         }
-      };
-      
-      const eliminarProduto = (produto) => {
+    };
+
+    const eliminarProduto = (produto) => {
         const index = carrinho.findIndex(item => item.id === produto.id);
-        
         if (index !== -1 && carrinho[index].quantidade > 1) {
-          const novoCarrinho = [...carrinho];
-          novoCarrinho[index].quantidade--;
-          setCarrinho(novoCarrinho);
+            const novoCarrinho = [...carrinho];
+            novoCarrinho[index].quantidade--;
+            setCarrinho(novoCarrinho);
         }
-      };
-      
-      const removerProduto = (produto) => {
+    };
+
+    const removerProduto = (produto) => {
         const index = carrinho.findIndex(item => item.id === produto.id);
-      
         if (index !== -1) {
-          const novoCarrinho = [...carrinho];
-          novoCarrinho.splice(index, 1); 
-          setCarrinho(novoCarrinho);
+            const novoCarrinho = [...carrinho];
+            novoCarrinho.splice(index, 1);
+            setCarrinho(novoCarrinho);
         }
-      };
-    
-      const atualizarQuantidade = (produto, novaQuantidade) => {
-        // Verifique se a novaQuantidade é um número válido.
+    };
+
+    const atualizarQuantidade = (produto, novaQuantidade) => {
         const novaQuantidadeNum = parseInt(novaQuantidade, 10);
         if (!isNaN(novaQuantidadeNum) && novaQuantidadeNum >= 1) {
-          const index = carrinho.findIndex((item) => item.id === produto.id);
-      
-          if (index !== -1) {
-            const novoCarrinho = [...carrinho];
-            novoCarrinho[index].quantidade = novaQuantidadeNum;
-            setCarrinho(novoCarrinho);
-          }
+            const index = carrinho.findIndex((item) => item.id === produto.id);
+            if (index !== -1) {
+                const novoCarrinho = [...carrinho];
+                novoCarrinho[index].quantidade = novaQuantidadeNum;
+                setCarrinho(novoCarrinho);
+            }
         }
-      };
+    };
 
-      // Função para calcular o valor total
-      const calcularValorTotal = (carrinho) => {
-          let total = 0;
-          for (const produto of carrinho) {
-              total += parseFloat(produto.valor) * produto.quantidade;
-          }
-          return total;
-      }
-  
-      useEffect(() => {
-        // Atualize o valor total sempre que o carrinho for alterado
+    const calcularValorTotal = (carrinho) => {
+        let total = 0;
+        for (const produto of carrinho) {
+            total += parseFloat(produto.valor) * produto.quantidade;
+        }
+        return total;
+    };
+
+    useEffect(() => {
         setValorTotal(calcularValorTotal(carrinho));
     }, [carrinho]);
 
     return (
-      <>
-        <section className="cart">
-            <div className="container-site">
-                <div className="cart-info">
-                    <div className="router"><Link href="./" alt="Início">Home</Link> &gt; Carrinho</div>
-                    <div className="info-card">
-                        <div className="products">
-                            <div className="my-product">
-                            {carrinho.map((produtoCarrinho, key) => {
-                                return(
+        <>
+            <section className="cart">
+                <div className="container-site">
+                    <div className="cart-info">
+                        <div className="router"><Link href="./" alt="Início">Home</Link> &gt; Carrinho</div>
+                        <div className="info-card">
+                            <div className="products">
+                                <div className="my-product">
+                                    {carrinho.map((produtoCarrinho, key) => {
+                                        return (
 
-                                <div className="card-shop" key={`carrinho-${produtoCarrinho.id}`}>
-                                    <div className="image-shop">
-                                        <Image src={produtoCarrinho.imagem} alt="produto" />
-                                        <div className="delete" onClick={() => removerProduto(produtoCarrinho)}><AiOutlineDelete /></div>
+                                            <div className="card-shop" key={`carrinho-${produtoCarrinho.id}`}>
+                                                <div className="image-shop">
+                                                    <Image src={produtoCarrinho.imagem} alt="produto" />
+                                                    <div className="delete" onClick={() => removerProduto(produtoCarrinho)}><AiOutlineDelete /></div>
+                                                </div>
+                                                <div className="name-product-shop">{produtoCarrinho.nome}</div>
+                                                <div className="quanty-shop"><p>Quantidade</p>
+                                                    <div className="input-qtd">
+                                                        <button onClick={() => eliminarProduto(produtoCarrinho)}>-</button>
+                                                        <input type="tel" onChange={(e) => atualizarQuantidade(produtoCarrinho, e.target.value)} value={produtoCarrinho.quantidade} readOnly />
+                                                        <button onClick={() => agregarProduto(produtoCarrinho)}>+</button>
+                                                    </div>
+                                                </div>
+                                                <div className="price-shop">Valor<p></p><b>{produtoCarrinho.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b></div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div className="indicated-product">
+                                    <div className="card-shop-product">
+                                        <div className="image-indicated"><Image src={image} alt="produto" /></div>
+                                        <div className="name-product-shop"><p>Nome do produto</p></div>
+                                        <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
                                     </div>
-                                    <div className="name-product-shop">{produtoCarrinho.nome}</div>
-                                    <div className="quanty-shop"><p>Quantidade</p>
-                                        <div className="input-qtd">
-                                            <button onClick={() => eliminarProduto(produtoCarrinho)}>-</button>
-                                            <input type="tel" onChange={(e) => atualizarQuantidade(produtoCarrinho, e.target.value)} value={produtoCarrinho.quantidade} readOnly />
-                                            <button onClick={() => agregarProduto(produtoCarrinho)}>+</button>
-                                        </div>
+                                    <div className="card-shop-product">
+                                        <div className="image-indicated"><Image src={image} alt="produto" /></div>
+                                        <div className="name-product-shop"><p>Nome do produto</p></div>
+                                        <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
                                     </div>
-                                    <div className="price-shop">Valor<p></p><b>{produtoCarrinho.valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</b></div>
-                                </div>
-                            )})}
-                            </div>
-                            <div className="indicated-product">
-                                <div className="card-shop-product">
-                                    <div className="image-indicated"><Image src={image} alt="produto" /></div>
-                                    <div className="name-product-shop"><p>Nome do produto</p></div>
-                                    <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
-                                </div>
-                                <div className="card-shop-product">
-                                    <div className="image-indicated"><Image src={image} alt="produto" /></div>
-                                    <div className="name-product-shop"><p>Nome do produto</p></div>
-                                    <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
-                                </div>
-                                <div className="card-shop-product">
-                                    <div className="image-indicated"><Image src={image} alt="produto" /></div>
-                                    <div className="name-product-shop"><p>Nome do produto</p></div>
-                                    <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
-                                </div>
-                                <div className="card-shop-product">
-                                    <div className="image-indicated"><Image src={image} alt="produto" /></div>
-                                    <div className="name-product-shop"><p>Nome do produto</p></div>
-                                    <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
-                                </div>
-                                <div className="card-shop-product">
-                                    <div className="image-indicated"><Image src={image} alt="produto" /></div>
-                                    <div className="name-product-shop"><p>Nome do produto</p></div>
-                                    <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
+                                    <div className="card-shop-product">
+                                        <div className="image-indicated"><Image src={image} alt="produto" /></div>
+                                        <div className="name-product-shop"><p>Nome do produto</p></div>
+                                        <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
+                                    </div>
+                                    <div className="card-shop-product">
+                                        <div className="image-indicated"><Image src={image} alt="produto" /></div>
+                                        <div className="name-product-shop"><p>Nome do produto</p></div>
+                                        <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
+                                    </div>
+                                    <div className="card-shop-product">
+                                        <div className="image-indicated"><Image src={image} alt="produto" /></div>
+                                        <div className="name-product-shop"><p>Nome do produto</p></div>
+                                        <div className="price-product-shop"><span>a parte de</span><p>R$ 29,00</p></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="result-cart">
-                            <div className="result-total">
-                                <div className="info-total">
-                                    <h3>Resultado</h3>
-                                    <div className="frete">Frete <b>R$ 30,00</b></div>
-                                    <div className="cupom-result">Cupom <b>-</b></div>
-                                    <div className="result-shop">Total <b>{valorTotalFormatado}</b></div>
+                            <div className="result-cart">
+                                <div className="result-total">
+                                    <div className="info-total">
+                                        <h3>Resultado</h3>
+                                        <div className="frete">Frete <b>R$ 30,00</b></div>
+                                        <div className="cupom-result">Cupom <b>-</b></div>
+                                        <div className="result-shop">Total <b>{valorTotalFormatado}</b></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="prev-shop">
-                                <b>Previção de entrega</b>
-                                <div className="info-prev"><p>Endereço:</p> <span>Rua tal casa tal bairro tal ...</span></div>
-                                <div className="info-prev"><p>Entregador:</p> <span>Correios</span></div>
-                                <div className="info-prev"><p>Prazo:</p> <span>30 dias</span></div>
-                            </div>
+                                <div className="cep">
+                                    <div className="cep-form">
+                                        <form method='post' onSubmit={(e) => inputCupon(e)}>
+                                            <div className="input-cep">
+                                                <input type="text" placeholder='Digite o seu CEP aqui' name="cep" />
+                                                <button type="submit" id="cep"><BsCheckLg /></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    {validarCep == true ? (<div className="alert-cep">CEP invalido</div>) : (<></>)}
+                                </div>
+                                <div className="prev-shop">
+                                    <b>Previção de entrega</b>
+                                    <div className="info-prev"><p>Endereço:</p> <span>Rua tal casa tal bairro tal ...</span></div>
+                                    <div className="info-prev"><p>Entregador:</p> <span>Correios</span></div>
+                                    <div className="info-prev"><p>Prazo:</p> <span>30 dias</span></div>
+                                </div>
                                 <div className="cupom">
                                     <div className="cupom-form">
                                         <form method='post' onSubmit={(e) => inputCupon(e)}>
@@ -188,16 +191,14 @@ export default function Shop() {
                                             </div>
                                         </form>
                                     </div>
-                                    {validarCupom == true ? ( <div className="alert-cupom">Cupom invalido</div>) : (<></>)}
-                                   
+                                    {validarCupom == true ? (<div className="alert-cupom">Cupom invalido</div>) : (<></>)}
                                 </div>
-                            <div className="button-cart"><button>Continuar</button></div>
+                                <div className="button-cart"><button>Continuar</button></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-      </>
+            </section>
+        </>
     )
-  }
-  
+}

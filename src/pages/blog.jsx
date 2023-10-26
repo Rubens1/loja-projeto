@@ -5,11 +5,10 @@ import Footer from '../components/Footer'
 export default function blog() {
   return (
     <>
-    <Head>
-      <title>Blog</title>
-    </Head>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <Menu />
-      
       <Footer />
     </>
   )

@@ -5,11 +5,10 @@ import Footer from '../components/Footer'
 export default function Gabaritos() {
   return (
     <>
-    <Head>
-      <title>Gabaritos</title>
-    </Head>
+      <Head>
+        <title>Gabaritos</title>
+      </Head>
       <Menu />
-      
       <Footer />
     </>
   )

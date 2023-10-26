@@ -6,9 +6,9 @@ import Contact from '../components/Contact'
 export default function Contato() {
   return (
     <>
-    <Head>
-      <title>Contato</title>
-    </Head>
+      <Head>
+        <title>Contato</title>
+      </Head>
       <Menu />
       <Contact />
       <Footer />

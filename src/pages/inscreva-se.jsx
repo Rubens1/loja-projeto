@@ -5,11 +5,10 @@ import Footer from '../components/Footer'
 export default function Inscreva() {
   return (
     <>
-    <Head>
-      <title>Insgreva-se</title>
-    </Head>
+      <Head>
+        <title>Inscreva-se</title>
+      </Head>
       <Menu />
-      
       <Footer />
     </>
   )

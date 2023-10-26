@@ -123,7 +123,8 @@
 .info-total h3{
     margin-bottom: 20px;
 }
-.cupom-form{
+.cupom-form,
+.cep-form{
     border: 1px solid var(--color-black);
     display: flex;
     justify-content: center;
@@ -132,25 +133,30 @@
     background-color: var(--color-white);
     border-radius: 0.25rem;
 }
-.cupom{
+.cupom,
+.cep{
     margin: 20px 0;
 }
-.input-cupom{
+.input-cupom,
+.input-cep{
     padding: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-.input-cupom input{
+.input-cupom input,
+.input-cep input{
     border: none;
     width: 100%;
 }
-.input-cupom input{
+.input-cupom input,
+.input-cep input{
     box-shadow: 0 0 0 0;
     outline: 0;
 }
-.input-cupom button{
+.input-cupom button,
+.input-cep button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,10 +167,12 @@
     border-radius: 0.25rem;
     height: 40px;
 }
-.input-cupom button:hover{
+.input-cupom button:hover,
+.input-cep button:hover{
     opacity: 0.7;
 }
-.alert-cupom{
+.alert-cupom,
+.alert-cep{
     width: 100%;
     display: flex;
     justify-content: end;
@@ -281,7 +289,6 @@
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
-    margin-top: 20px;
     padding: 5px;
     border-radius: 0.25rem;
 }

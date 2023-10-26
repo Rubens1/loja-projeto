@@ -6,9 +6,9 @@ import Shop from '../components/Shop'
 export default function Carrinho() {
   return (
     <>
-    <Head>
-      <title>Carrinho</title>
-    </Head>
+      <Head>
+        <title>Carrinho</title>
+      </Head>
       <Menu />
       <Shop />
       <Footer />

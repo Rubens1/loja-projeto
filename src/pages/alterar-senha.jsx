@@ -6,9 +6,9 @@ import LoginClient from '../components/Client/Login'
 export default function AlterarSenha() {
   return (
     <>
-    <Head>
-      <title>Alterar a Senha</title>
-    </Head>
+      <Head>
+        <title>Alterar a Senha</title>
+      </Head>
       <Menu />
       <LoginClient />
       <Footer />
