@@ -82,25 +82,27 @@ export default function LoginClient() {
           <div className="form-container-site sign-up">
             <form onSubmit={e => handleCreate(e)}>
               <h1>Criar uma conta</h1>
-              <div className="social-icons">
+             {/*  <div className="social-icons">
                 <a href="#" className="icon"><AiOutlineGooglePlus /></a>
                 <a href="#" className="icon"><BiLogoFacebook /></a>
               </div>
-              <span>ou use seu e-mail para cadastro</span>
+              <span>ou use seu e-mail para cadastro</span> */}
               <input type="text" placeholder="Nome" name="nome_cadastro" />
               <input type="email" placeholder="Email" name="email_cadastro" />
               <input type="password" placeholder="Senha" name="senha_cadastro" />
+              <input type="tel" placeholder="Celular" name="celular_cadastro" />
+              <input type="tel" placeholder="CPF ou CNPJ" name="cpfcnpj_cadastro" />
               <button type="submit">Inscrever-se</button>
             </form>
           </div>
           <div className="form-container-site sign-in">
             <form onSubmit={e => handleSubmit(e)}>
               <h1>Entrar</h1>
-              <div className="social-icons">
+              {/* <div className="social-icons">
                 <a href="#" className="icon"><AiOutlineGooglePlus /></a>
                 <a href="#" className="icon"><BiLogoFacebook /></a>
               </div>
-              <span>ou use sua senha de e-mail</span>
+              <span>ou use sua senha de e-mail</span> */}
               <input type="email" placeholder="Email" name="email" />
               <input type="password" placeholder="Senha" name="senha" />
               <Link href="/recupera-senha" alt="Recupera senha">Esqueceu sua senha?</Link>
