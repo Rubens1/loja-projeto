@@ -212,7 +212,7 @@
 }
 
 @media (max-width: 850px) {
-    .user{
+    .user {
         padding: 0;
     }
 
@@ -232,10 +232,12 @@
     .form-group {
         flex-wrap: wrap;
     }
-    .menu-client span{
+
+    .menu-client span {
         display: none;
     }
-    .user-addr-container-site{
+
+    .user-addr-container-site {
         margin: 0;
     }
 }
