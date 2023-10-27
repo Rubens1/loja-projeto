@@ -1,7 +1,7 @@
-import Menu from '../components/Menu'
-import Head from 'next/head'
-import Footer from '../components/Footer'
-import LoginClient from '../components/Client/Login'
+import Menu from '../components/Menu';
+import Head from 'next/head';
+import Footer from '../components/Footer';
+import Senha from '../components/Client/Senha';
 
 export default function AlterarSenha() {
   return (
@@ -10,7 +10,7 @@ export default function AlterarSenha() {
         <title>Alterar a Senha</title>
       </Head>
       <Menu />
-      <LoginClient />
+      <Senha />
       <Footer />
     </>
   )
