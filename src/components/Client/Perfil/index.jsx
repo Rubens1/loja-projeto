@@ -49,10 +49,22 @@ export default function Perfil() {
                                     <input type="email" id="email" name="email" placeholder="Digite o seu E-mail" />
                                 </fieldset>
                             </div>
-
+                            <div className="form-group">
+                                <fieldset>
+                                    <legend>Telefone</legend>
+                                    <input type="tel" id="telefone" name="telefone" placeholder="Digite o seu telefone com o DDD" />
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Celular</legend>
+                                    <input type="tel" id="celular" name="email" placeholder="Digite o seu Celular com o DDD" />
+                                </fieldset>
+                            </div>
+                            <div className="button-atualiza">
+                                <button>Atualizar</button>
+                            </div>
                         </form>
                     </div>
-                    
+
                 </div>
             </section>
         </>

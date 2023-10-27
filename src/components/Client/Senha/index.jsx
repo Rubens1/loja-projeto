@@ -17,7 +17,7 @@ export default function Senha() {
                   <legend>Sua senha</legend>
                   <input type="password" id="sua-senha" name="sua-senha" placeholder="Digite a sua senha antiga" />
                 </fieldset>
-               
+
               </div>
               <div className="form-group">
                 <fieldset>
@@ -29,9 +29,9 @@ export default function Senha() {
                   <input type="password" id="confirma-senha" name="confirma-senha" placeholder="Confirma a senha" />
                 </fieldset>
               </div>
-                <div className="button-atualiza">
-                  <button>Atualizar</button>
-                </div>
+              <div className="button-atualiza">
+                <button>Atualizar</button>
+              </div>
             </form>
           </div>
         </div>

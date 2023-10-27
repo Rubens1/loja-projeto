@@ -36,7 +36,7 @@ export default function Shop() {
         let cuponEncontrado = false;
 
         cupons.forEach(item => {
-            if (item.label === resultado.desconto.value) {
+            if (item.label === resultado.cupom.value) {
                 cuponEncontrado = true;
             }
         });
@@ -47,6 +47,11 @@ export default function Shop() {
         }
     };
 
+    const inputCep = (e) => {
+        e.preventDefault();
+        let dado = e.target
+        console.log("CEP: " + dado.cep.value)
+    }
     const agregarProduto = (produto) => {
         const index = carrinho.findIndex(item => item.id === produto.id);
         if (index !== -1) {
@@ -169,10 +174,10 @@ export default function Shop() {
                                 </div>
                                 <div className="cep">
                                     <div className="cep-form">
-                                        <form method='post' onSubmit={(e) => inputCupon(e)}>
+                                        <form method='post' onSubmit={(e) => inputCep(e)}>
                                             <div className="input-cep">
-                                                <input type="text" placeholder='Digite o seu CEP aqui' name="cep" />
-                                                <button type="submit" id="cep"><BsCheckLg /></button>
+                                                <input type="tel" placeholder='Digite o seu CEP aqui' name="cep" />
+                                                <button type="submit"><BsCheckLg /></button>
                                             </div>
                                         </form>
                                     </div>
@@ -188,8 +193,8 @@ export default function Shop() {
                                     <div className="cupom-form">
                                         <form method='post' onSubmit={(e) => inputCupon(e)}>
                                             <div className="input-cupom">
-                                                <input type="text" placeholder='Digite o cupom aqui' name="desconto" />
-                                                <button type="submit" id="cupom"><BsCheckLg /></button>
+                                                <input type="text" placeholder='Digite o cupom aqui' name="cupom" />
+                                                <button type="submit"><BsCheckLg /></button>
                                             </div>
                                         </form>
                                     </div>

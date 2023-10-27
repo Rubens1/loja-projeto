@@ -4,6 +4,7 @@ import { TiContacts } from 'react-icons/ti';
 import { BsCashCoin, BsPinMap } from 'react-icons/bs';
 import { LiaUserTieSolid } from 'react-icons/lia';
 import { RiLockPasswordLine } from 'react-icons/ri';
+import { FiMapPin } from 'react-icons/fi';
 export default function MenuUser() {
     return (
         <>
@@ -11,22 +12,22 @@ export default function MenuUser() {
             <nav>
                 <ul>
                     <li>
-                        <Link href="meu-perfil" alt="Dados Básicos"><CiUser /> Dados Básicos</Link>
+                        <Link href="meu-perfil" alt="Dados Básicos"><CiUser /> <span>Dados Básicos</span></Link>
                     </li>
                     <li>
-                        <Link href="alterar-senha" alt="Alterar Senha"><RiLockPasswordLine /> Alterar Senha</Link>
+                        <Link href="alterar-senha" alt="Alterar Senha"><RiLockPasswordLine /> <span>Senha</span></Link>
                     </li>
                     <li>
-                        <Link href="dados-da-empresa" alt="Dados da Empresa"><LiaUserTieSolid /> Dados da Empresa</Link>
+                        <Link href="dados-da-empresa" alt="Dados da Empresa"><LiaUserTieSolid /> <span>Dados da Empresa</span></Link>
                     </li>
                     <li>
-                        <Link href="enderecos" alt="Endereço"><BsPinMap />Endereço</Link>
+                        <Link href="enderecos" alt="Endereço"><FiMapPin /> <span>Endereço</span></Link>
                     </li>
                     <li>
-                        <Link href="contatos" alt="Contatos"><TiContacts /> Contatos</Link>
+                        <Link href="contatos" alt="Contatos"><TiContacts /> <span>Contatos</span></Link>
                     </li>
                     <li>
-                        <Link href="conta-bancaria" alt="Conta Bancaria"><BsCashCoin /> Conta Bancaria</Link>
+                        <Link href="conta-bancaria" alt="Conta Bancaria"><BsCashCoin /> <span>Conta Bancaria</span></Link>
                     </li>
                 </ul>
             </nav>

@@ -68,11 +68,13 @@
     display: flex;
     align-items: center;
 }
-.addr-title svg{
+
+.addr-title svg {
     color: yellow;
     font-size: 20px;
     margin-right: 10px;
 }
+
 .actions-btn {
     margin-top: 1rem;
 }
@@ -158,12 +160,14 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.button-atualiza{
+
+.button-atualiza {
     width: 100%;
     display: flex;
     justify-content: end;
 }
-.button-atualiza button{
+
+.button-atualiza button {
     padding: 10px;
     border-radius: 0.25rem;
     border: 1px solid var(--color-attention);
@@ -171,11 +175,13 @@
     color: var(--color-attention);
     transition: 0.3s ease;
 }
-.button-atualiza button:hover{
+
+.button-atualiza button:hover {
     background-color: var(--color-attention);
     color: var(--color-white);
 }
-.menu-client{
+
+.menu-client {
     display: flex;
     max-width: 200px;
     width: 100%;
@@ -184,26 +190,39 @@
     align-items: center;
 }
 
-.menu-client ul{
+.menu-client ul {
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
     padding: 10px;
     border-radius: 0.25rem;
 }
-.menu-client ul li{
+
+.menu-client ul li {
     margin: 10px 0;
     transition: .3s ease;
 }
-.menu-client ul li svg{
+
+.menu-client ul li svg {
     margin-right: 10px;
 }
-.menu-client ul li:hover{
+
+.menu-client ul li:hover {
     opacity: .7;
 }
+
 @media (max-width: 850px) {
+    .user{
+        padding: 0;
+    }
+
+    .menu-client {
+        max-width: 60px;
+    }
+
     .user-profile-container-site {
         flex-wrap: wrap;
+
     }
 
     .address-card {
@@ -212,5 +231,11 @@
 
     .form-group {
         flex-wrap: wrap;
+    }
+    .menu-client span{
+        display: none;
+    }
+    .user-addr-container-site{
+        margin: 0;
     }
 }
