@@ -4,17 +4,16 @@ import image2 from '@/public/image-2.jpg';
 import image3 from '@/public/image-3.jpg';
 import image4 from '@/public/image-4.jpg';
 import image5 from '@/public/image-5.jpg';
-import { useEffect, useState } from "react";
 
 import Slider from "react-slick";
 export default function CarouselInfo() {
-  const [image, setImage] = useState();
   let settings = {
     dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
   };
   return (
     <>

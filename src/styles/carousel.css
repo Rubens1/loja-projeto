@@ -8,7 +8,10 @@
 .slick-dots{
     bottom: 5px !important;
 }
-
+.slick-slide img {
+    max-height: 500px;
+    height: 100%;
+}
 .slick-dots li.slick-active button:before{
     color: red !important;
 }
