@@ -87,11 +87,11 @@ export default function LoginClient() {
                 <a href="#" className="icon"><BiLogoFacebook /></a>
               </div>
               <span>ou use seu e-mail para cadastro</span> */}
-              <input type="text" placeholder="Nome" name="nome_cadastro" />
-              <input type="email" placeholder="Email" name="email_cadastro" />
-              <input type="password" placeholder="Senha" name="senha_cadastro" />
-              <input type="tel" placeholder="Celular" name="celular_cadastro" />
-              <input type="tel" placeholder="CPF ou CNPJ" name="cpfcnpj_cadastro" />
+              <input type="text" placeholder="Nome" name="nome_cadastro" required/>
+              <input type="email" placeholder="Email" name="email_cadastro" required/>
+              <input type="password" placeholder="Senha" name="senha_cadastro" required/>
+              <input type="tel" placeholder="Celular" name="celular_cadastro" required/>
+              <input type="tel" placeholder="CPF ou CNPJ" name="cpfcnpj_cadastro" required/>
               <button type="submit">Inscrever-se</button>
             </form>
           </div>
@@ -103,8 +103,8 @@ export default function LoginClient() {
                 <a href="#" className="icon"><BiLogoFacebook /></a>
               </div>
               <span>ou use sua senha de e-mail</span> */}
-              <input type="email" placeholder="Email" name="email" />
-              <input type="password" placeholder="Senha" name="senha" />
+              <input type="email" placeholder="Email" name="email" required/>
+              <input type="password" placeholder="Senha" name="senha" required/>
               <Link href="/recupera-senha" alt="Recupera senha">Esqueceu sua senha?</Link>
               <button type="submit">Entrar</button>
               <Link href="/cadastra" className="registro-link" alt="Cadastrar">Criar conta</Link>
