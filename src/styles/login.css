@@ -212,6 +212,9 @@
     display: none;
 }
 
+.sign-up-mobile{
+    width: 100%;
+}
 @media (max-width: 700px) {
     .registro-link {
         display: flex;
@@ -241,4 +244,5 @@
     .form-container-site .sign-in {
         display: none;
     }
+
 }

@@ -1,15 +1,15 @@
 import Menu from '../components/Menu'
 import Head from 'next/head'
 import Footer from '../components/Footer'
-import LoginClient from '../components/Client/Login'
-export default function Login() {
+import CadastroClient from '../components/Client/Cadastra'
+export default function Cadastra() {
     return (
         <>
             <Head>
-                <title>Login</title>
+                <title>Cadastra</title>
             </Head>
             <Menu />
-            <LoginClient />
+            <CadastroClient />
             <Footer />
         </>
     )
