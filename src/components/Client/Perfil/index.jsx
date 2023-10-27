@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MenuUser from "../Menu";

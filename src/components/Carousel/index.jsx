@@ -18,15 +18,15 @@ export default function CarouselInfo() {
   return (
     <>
       <section className="slide-container-site">
-      <Slider {...settings}>
-            <Image id="img-carousel" src={image1} className="active" alt="Carousel" />
-            <Image id="img-carousel" src={image2} alt="Carousel" />
-            <Image id="img-carousel" src={image3} alt="Carousel" />
-            <Image id="img-carousel" src={image4} alt="Carousel" />
-            <Image id="img-carousel" src={image5} alt="Carousel" />
-      </Slider>
+        <Slider {...settings}>
+          <Image id="img-carousel" src={image1} className="active" alt="Carousel" />
+          <Image id="img-carousel" src={image2} alt="Carousel" />
+          <Image id="img-carousel" src={image3} alt="Carousel" />
+          <Image id="img-carousel" src={image4} alt="Carousel" />
+          <Image id="img-carousel" src={image5} alt="Carousel" />
+        </Slider>
 
-        
+
       </section>
     </>
   )

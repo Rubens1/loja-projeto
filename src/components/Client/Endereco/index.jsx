@@ -9,7 +9,7 @@ export default function EnderecoInfo() {
     ];
 
     const modalEdito = (e) => {
-        
+
         console.log("Editar: " + e)
     }
     const modalDetere = (e) => {

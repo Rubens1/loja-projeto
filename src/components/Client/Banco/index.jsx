@@ -1,6 +1,6 @@
 import MenuUser from "../Menu";
 export default function ContaBancaria() {
-   
+
     return (
         <>
             <section className="user">
