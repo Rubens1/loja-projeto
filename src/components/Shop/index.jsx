@@ -12,9 +12,12 @@ export default function Shop() {
     const [carrinho, setCarrinho] = useState([
         { id: 1, imagem: image, nome: "Produto 1", quantidade: 1, valor: 23.25 },
         { id: 2, imagem: image, nome: "Produto 2", quantidade: 1, valor: 20.20 },
-        { id: 3, imagem: image, nome: "Produto 3", quantidade: 1, valor: 18.50 },
+        { id: 3, imagem: image, nome: "Produto 3", quantidade: 1, valor: 18.49 },
         { id: 4, imagem: image, nome: "Produto 4", quantidade: 1, valor: 33.70 },
-        { id: 5, imagem: image, nome: "Produto 5", quantidade: 1, valor: 16.70 }
+        { id: 5, imagem: image, nome: "Produto 5", quantidade: 1, valor: 16.70 },
+        { id: 6, imagem: image, nome: "Produto 6", quantidade: 1, valor: 02.00},
+        { id: 7, imagem: image, nome: "Produto 7", quantidade: 1, valor: 09.00},
+        { id: 8, imagem: image, nome: "Produto 8", quantidade: 1, valor: 08.39}
 
     ]);
     const [valorTotal, setValorTotal] = useState(0);
